@@ -4,9 +4,10 @@ metadata:
   name: api-clusterrolebinding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
+  kind: ClusterRole
   name: api-clusterrole
 subjects:
-- apiGroup: rbac.authorization.k8s.io
+- apiGroup: ""
   kind: ServiceAccount
   name: api-access
+  namespace: apps
