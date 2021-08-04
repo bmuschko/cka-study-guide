@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: build-observer
+spec:
+  serviceAccountName: build-bot
+  containers:
+  - args:
+    - /bin/sh
+    - -c
+    - while true; do date; sleep 10; done
+    image: busybox
+    name: build-observer
+restartPolicy: Never
