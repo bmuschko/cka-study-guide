@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: web-app
+  name: web-app
+spec:
+  containers:
+  - image: bmuschko/web-app:1.0.1
+    name: web-app
+    env:
+    - name: DB_HOST
+      value: mysql-service
+    - name: DB_USER
+      value: root
+    - name: DB_PASSWORD
+      value: password
+    ports:
+    - containerPort: 3000
+      protocol: TCP
+  restartPolicy: Always
