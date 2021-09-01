@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: web-app
+  name: web-app
+spec:
+  containers:
+  - image: bmuschko/web-app:1.0.1
+    name: web-app
+    envFrom:
+    - configMapRef:
+        name: db-config
+    - secretRef:
+        name: db-creds
+    ports:
+    - containerPort: 3000
+      protocol: TCP
+  restartPolicy: Always

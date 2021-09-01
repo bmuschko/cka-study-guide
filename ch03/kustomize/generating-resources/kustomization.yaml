@@ -1,0 +1,10 @@
+configMapGenerator:
+- name: db-config
+  files:
+  - config/db-config.properties
+secretGenerator:
+- name: db-creds
+  files:
+  - config/db-secret.properties
+resources:
+- web-app-pod.yaml
