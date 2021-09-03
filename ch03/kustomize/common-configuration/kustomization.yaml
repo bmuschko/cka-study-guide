@@ -1,0 +1,6 @@
+namespace: persistence
+commonLabels:
+  team: helix
+resources:
+- web-app-deployment.yaml
+- web-app-service.yaml

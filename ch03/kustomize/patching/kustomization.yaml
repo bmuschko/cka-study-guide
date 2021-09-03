@@ -1,0 +1,4 @@
+resources:
+- nginx-deployment.yaml
+patchesStrategicMerge:
+- security-context.yaml
