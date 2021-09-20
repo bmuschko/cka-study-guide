@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spring-boot-app
+spec:
+  containers:
+  - image: bmuschko/spring-boot-app:1.5.3
+    name: spring-boot-app
+    env:
+    - name: SPRING_PROFILES_ACTIVE
+      value: prod
+    - name: VERSION
+      value: '1.5.3'
