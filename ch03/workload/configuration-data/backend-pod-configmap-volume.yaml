@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+spec:
+  containers:
+  - image: bmuschko/web-app:1.0.1
+    name: backend
+    volumeMounts:
+    - name: db-config-volume
+      mountPath: /etc/config
+  volumes:
+  - name: db-config-volume
+    configMap:
+      name: db-config
