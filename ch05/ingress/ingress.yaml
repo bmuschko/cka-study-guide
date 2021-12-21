@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: corellian
+spec:
+  rules:
+  - host: star-alliance.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: corellian
+            port:
+              number: 8080
+        path: /corellian/api
+        pathType: Exact
