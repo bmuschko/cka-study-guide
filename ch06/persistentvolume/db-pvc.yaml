@@ -8,4 +8,4 @@ spec:
   storageClassName: ""
   resources:
     requests:
-      storage: 512m
+      storage: 256Mi
