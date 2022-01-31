@@ -16,6 +16,5 @@ This study guide walks you through all the topics you need to fully prepare for 
 4. https://github.com/bmuschko/cka-study-guide/tree/master/ch04[Scheduling and Tooling]
 5. https://github.com/bmuschko/cka-study-guide/tree/master/ch05[Services & Networking]
 6. https://github.com/bmuschko/cka-study-guide/tree/master/ch06[Storage]
-7. https://github.com/bmuschko/cka-study-guide/tree/master/ch07[Pod Design]
-8. https://github.com/bmuschko/cka-study-guide/tree/master/ch08[Troubleshooting]
-9. https://github.com/bmuschko/cka-study-guide/tree/master/app-a[Appendix A: Answers to Review Questions]
+7. https://github.com/bmuschko/cka-study-guide/tree/master/ch07[Troubleshooting]
+8. https://github.com/bmuschko/cka-study-guide/tree/master/app-a[Appendix A: Answers to Review Questions]
