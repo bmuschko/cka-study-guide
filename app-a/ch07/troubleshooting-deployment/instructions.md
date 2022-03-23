@@ -1,4 +1,4 @@
-In this exercise, you will troubleshoot a misconfigured applications. The web application managed by a Deployment controls 4 replicas. The Pods have been exposed by a Service. The Service for the web application Pod is of type `NodePort`.
+In this exercise, you will troubleshoot a misconfigured application stack. The web application managed by a Deployment controls 4 replicas. The Pods have been exposed by a Service. The Service for the web application Pod is of type `NodePort`.
 
 The following image shows the high-level architecture.
 
