@@ -6,7 +6,7 @@
 ++++
 Source code for book https://www.oreilly.com/library/view/certified-kubernetes-administrator/9781098107215/["Certified Kubernetes Administrator (CKA) Study Guide"], In-Depth Guidance and Practice, published by Benjamin Muschko for O'Reilly Media Inc.
 
-This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.21. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
+This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.23. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
 
 == Source Code
 
