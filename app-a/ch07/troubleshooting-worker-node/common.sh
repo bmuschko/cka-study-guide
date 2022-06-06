@@ -9,7 +9,7 @@ add-apt-repository \
   $(lsb_release -cs) \
   stable"
 apt-get update
-apt-get install -y avahi-daemon libnss-mdns traceroute htop httpie bash-completion docker-ce=5:19.03.14~3-0~ubuntu-bionic kubeadm kubelet kubectl
+apt-get install -y avahi-daemon libnss-mdns traceroute htop httpie bash-completion docker-ce=5:19.03.14~3-0~ubuntu-bionic kubeadm=1.23.6-00 kubelet=1.23.6-00 kubectl=1.23.6-00
 cat > /etc/docker/daemon.json <<EOF
 {
   "exec-opts": ["native.cgroupdriver=systemd"],

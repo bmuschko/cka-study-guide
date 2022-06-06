@@ -1,18 +1,18 @@
 # Solution
 
-Shell into the master node with the following command.
+Shell into the control-plane node with the following command.
 
 ```
-$ vagrant ssh kube-master
+$ vagrant ssh kube-control-plane
 ```
 
 Have a look at the status of the nodes. The worker node has an issue indicated by "NotReady".
 
 ```
 $ kubectl get nodes
-NAME            STATUS     ROLES                  AGE     VERSION
-kube-master     Ready      control-plane,master   2m52s   v1.20.2
-kube-worker-1   NotReady   <none>                 85s     v1.20.2
+NAME                 STATUS     ROLES                  AGE     VERSION
+kube-control-plane   Ready      control-plane,master   2m52s   v1.23.6
+kube-worker-1        NotReady   <none>                 85s     v1.23.6
 ```
 
 The events of the worker node to not expose any apparent issues.
@@ -30,7 +30,7 @@ Events:
   Normal  NodeAllocatableEnforced  4m15s                  kubelet  Updated Node Allocatable limit across pods
 ```
 
-Exit the master node and shell into the worker node.
+Exit the control-plane node and shell into the worker node.
 
 ```
 $ exit
@@ -90,7 +90,7 @@ The worker node should transition into the "Ready" status.
 
 ```
 $ kubectl get nodes
-NAME            STATUS   ROLES                  AGE   VERSION
-kube-master     Ready    control-plane,master   21m   v1.20.2
-kube-worker-1   Ready    <none>                 20m   v1.20.2
+NAME                 STATUS   ROLES                  AGE   VERSION
+kube-control-plane   Ready    control-plane,master   21m   v1.23.6
+kube-worker-1        Ready    <none>                 20m   v1.23.6
 ```
