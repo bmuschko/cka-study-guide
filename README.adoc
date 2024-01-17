@@ -11,10 +11,11 @@ This study guide walks you through all the topics you need to fully prepare for 
 == Source Code
 
 1. Exam Details and Resources
-2. https://github.com/bmuschko/cka-study-guide/tree/master/ch02[Cluster Architecture, Installation & Configuration]
-3. https://github.com/bmuschko/cka-study-guide/tree/master/ch03[Workloads]
-4. https://github.com/bmuschko/cka-study-guide/tree/master/ch04[Scheduling and Tooling]
-5. https://github.com/bmuschko/cka-study-guide/tree/master/ch05[Services & Networking]
-6. https://github.com/bmuschko/cka-study-guide/tree/master/ch06[Storage]
-7. https://github.com/bmuschko/cka-study-guide/tree/master/ch07[Troubleshooting]
-8. https://github.com/bmuschko/cka-study-guide/tree/master/app-a[Appendix A: Answers to Review Questions]
+2. link:ch02[Cluster Architecture, Installation & Configuration]
+3. link:ch03[Workloads]
+4. link:ch04[Scheduling and Tooling]
+5. link:ch05[Services & Networking]
+6. link:ch06[Storage]
+7. link:ch07[Troubleshooting]
+8. link:app-a[Appendix A: Answers to Review Questions]
+9. link:app-b/exam-review-guide.adoc[Appendix B: Exam Review Guide] (not available in book)
