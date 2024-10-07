@@ -40,8 +40,6 @@ This book covers https://github.com/cncf/curriculum[all objectives relevant to t
 |Use the Gateway API to manage Ingress traffic|N/A |https://kubernetes.io/docs/concepts/services-networking/gateway/[Gateway API]|N/A
 |Know how to use Ingress controllers and Ingress resources|https://learning.oreilly.com/library/view/certified-kubernetes-administrator/9781098107215/ch05.html#idm45322718330000[Understanding Ingress] |https://kubernetes.io/docs/concepts/services-networking/ingress/[Ingress], https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/[Ingress Controllers] |https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/[Set up Ingress on Minikube with the NGINX Ingress Controller]
 |Understand and use CoreDNS |https://learning.oreilly.com/library/view/certified-kubernetes-administrator/9781098107215/ch05.html#idm45322718103248[Using and Configuring CoreDNS] |https://coredns.io/[CoreDNS] |N/A
-|Choose an appropriate container network interface plugin |https://learning.oreilly.com/library/view/certified-kubernetes-administrator/9781098107215/ch05.html#idm45322717654272[Choosing an Appropriate Container Network Interface Plugin]|https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/[Network Plugins], https://kubernetes.io/docs/concepts/cluster-administration/addons/[Installing Addons]
- |N/A
 |=======
 
 === Storage
