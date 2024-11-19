@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z ${K8S_VERSION+x} ]; then
-  K8S_VERSION=1.26.1-1.1
+  K8S_VERSION=1.29.10-1.1
 fi
 
 # Install containerd container runtime
