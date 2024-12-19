@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: echoserver
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: echoserver
   ports:
-  - port: 5005
+  - port: 80
     targetPort: 8080
