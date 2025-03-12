@@ -12,12 +12,9 @@ This study guide walks you through all the topics you need to fully prepare for 
 
 == Source Code by Chapters
 
+. Introduction
 * Exam Details and Resources
-* link:ch02[Cluster Architecture, Installation & Configuration]
-* link:ch03[Workloads]
-* link:ch04[Scheduling and Tooling]
-* link:ch05[Services & Networking]
-* link:ch06[Storage]
-* link:ch07[Troubleshooting]
-* link:app-a[Appendix A: Answers to Review Questions]
-* link:app-b/exam-review-guide.adoc[Appendix B: Exam Review Guide]
+* Kubernetes in a Nutshell
+* link:./ch03[Interacting with Kubernetes]
+. Cluster Architecture, Installation and Configuration
+* link:./ch04[Cluster Installation and Upgrade]
