@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: mysql-db
+  name: mysql-db
+spec:
+  containers:
+  - image: mysql:5.6
+    name: mysql-db
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
+    ports:
+    - containerPort: 3306
+      protocol: TCP
+  restartPolicy: Always
