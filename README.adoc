@@ -1,21 +1,23 @@
-= Certified Kubernetes Administrator (CKA) Study Guide
+= Certified Kubernetes Administrator (CKA) Study Guide, 2nd Edition
 
 ++++
 <br>
 <img align="left" role="left" src="https://learning.oreilly.com/library/cover/9781098107215/" width="110" alt="Book Cover" />
 ++++
-Source code for book https://www.oreilly.com/library/view/certified-kubernetes-administrator/9781098107215/["Certified Kubernetes Administrator (CKA) Study Guide"], In-Depth Guidance and Practice, published by Benjamin Muschko for O'Reilly Media Inc.
+Source code for book https://www.oreilly.com/library/view/certified-kubernetes-administrator/9781098107215/["Certified Kubernetes Administrator (CKA) Study Guide, 2nd Edition"], In-Depth Guidance and Practice, published by Benjamin Muschko for O'Reilly Media Inc.
 
-This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.23. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
+This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.32. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
 
-== Source Code
+> **_NOTE:_** The source code for the 1st edition of the book is available https://github.com/bmuschko/cka-study-guide/tree/1st-edition[here].
 
-1. Exam Details and Resources
-2. link:ch02[Cluster Architecture, Installation & Configuration]
-3. link:ch03[Workloads]
-4. link:ch04[Scheduling and Tooling]
-5. link:ch05[Services & Networking]
-6. link:ch06[Storage]
-7. link:ch07[Troubleshooting]
-8. link:app-a[Appendix A: Answers to Review Questions]
-9. link:app-b/exam-review-guide.adoc[Appendix B: Exam Review Guide] (not available in book)
+== Source Code by Chapters
+
+* Exam Details and Resources
+* link:ch02[Cluster Architecture, Installation & Configuration]
+* link:ch03[Workloads]
+* link:ch04[Scheduling and Tooling]
+* link:ch05[Services & Networking]
+* link:ch06[Storage]
+* link:ch07[Troubleshooting]
+* link:app-a[Appendix A: Answers to Review Questions]
+* link:app-b/exam-review-guide.adoc[Appendix B: Exam Review Guide]
