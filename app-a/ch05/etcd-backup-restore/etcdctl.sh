@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install etcdctl
-ETCD_VERSION="v3.5.15"
+ETCD_VERSION="v3.5.16"
 
 ARCH=$(uname -m)
 if [ "$ARCH" == "x86_64" ]; then
