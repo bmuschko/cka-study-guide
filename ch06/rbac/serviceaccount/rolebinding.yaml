@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: serviceaccount-pod-rolebinding
+  namespace: k97
+subjects:
+- kind: ServiceAccount
+  name: sa-api
+roleRef:
+  kind: Role
+  name: list-pods-role
+  apiGroup: rbac.authorization.k8s.io

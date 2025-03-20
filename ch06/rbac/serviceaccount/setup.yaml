@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: k97
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa-api
+  namespace: k97
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: list-objects
+  namespace: k97
+spec:
+  serviceAccountName: sa-api
+  containers:
+  - name: pods
+    image: alpine/curl:3.14
+    command: ['sh', '-c', 'while true; do curl -s -k -m 5 -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default.svc.cluster.local/api/v1/namespaces/k97/pods; sleep 10; done']
+  - name: deployments
+    image: alpine/curl:3.14
+    command: ['sh', '-c', 'while true; do curl -s -k -m 5 -H "Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)" https://kubernetes.default.svc.cluster.local/apis/apps/v1/namespaces/k97/deployments; sleep 10; done']
