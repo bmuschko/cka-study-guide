@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/bmuschko/cka-study-guide.git
+    targetRevision: HEAD
+    path: ./ch07/nginx
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
