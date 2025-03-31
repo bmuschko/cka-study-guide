@@ -18,3 +18,10 @@ This study guide walks you through all the topics you need to fully prepare for 
 * link:./ch03[Interacting with Kubernetes]
 . Cluster Architecture, Installation and Configuration
 * link:./ch04[Cluster Installation and Upgrade]
+* link:./ch05[Backing Up and Restoring etcd]
+* link:./ch06[Authentication, Authorization, and Admission Control]
+* link:./ch07[Operators and Custom Resource Definitions (CRDs)]
+* link:./ch08[Helm and Kustomize]
+. Workloads and Scheduling
+* link:./ch09[Deployments]
+* link:./ch10[ConfigMaps and Secrets]
