@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+spec:
+  containers:
+  - image: bmuschko/web-app:1.0.1
+    name: backend
+    envFrom:
+    - configMapRef:
+        name: db-config
