@@ -2,9 +2,9 @@
 
 ++++
 <br>
-<img align="left" role="left" src="https://learning.oreilly.com/library/cover/9781098107215/" width="110" alt="Book Cover" />
+<img align="left" role="left" src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9798341608399/files/assets/cover.png" width="110" alt="Book Cover" />
 ++++
-Source code for book https://www.oreilly.com/library/view/certified-kubernetes-administrator/9781098107215/["Certified Kubernetes Administrator (CKA) Study Guide, 2nd Edition"], In-Depth Guidance and Practice, published by Benjamin Muschko for O'Reilly Media Inc.
+Source code for book https://learning.oreilly.com/library/view/certified-kubernetes-administrator/9798341608399/["Certified Kubernetes Administrator (CKA) Study Guide, 2nd Edition"], In-Depth Guidance and Practice, published by Benjamin Muschko for O'Reilly Media Inc.
 
 This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.32. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
 
@@ -23,5 +23,7 @@ This study guide walks you through all the topics you need to fully prepare for 
 * link:./ch07[Operators and Custom Resource Definitions (CRDs)]
 * link:./ch08[Helm and Kustomize]
 . Workloads and Scheduling
-* link:./ch09[Deployments]
+* link:./ch09[Pods and Namespaces]
 * link:./ch10[ConfigMaps and Secrets]
+* link:./ch11[Deployments and ReplicaSets]
+* link:./ch12[Scaling Workloads]
