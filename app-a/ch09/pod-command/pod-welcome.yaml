@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: loop
+  name: loop
+spec:
+  containers:
+  - args:
+    - /bin/sh
+    - -c
+    - for i in 1 2 3 4 5 6 7 8 9 10; do echo "Welcome $i times"; done
+    image: busybox
+    name: loop
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+status: {}

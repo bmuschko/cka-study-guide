@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hazelcast
+  labels:
+    app: hazelcast
+    env: prod
+spec:
+  containers:
+  - name: hazelcast
+    image: hazelcast/hazelcast:5.1.7
+    env:
+    - name: DNS_DOMAIN
+      value: cluster
+    ports:
+    - containerPort: 5701

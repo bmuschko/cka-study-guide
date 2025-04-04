@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: mypod
+    image: busybox:1.36.1
+    args:
+    - /bin/sh
+    - -c
+    - while true; do date; sleep 10; done
