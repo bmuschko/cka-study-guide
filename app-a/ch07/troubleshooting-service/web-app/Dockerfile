@@ -1,6 +1,6 @@
-FROM node:12
+FROM node:23
 WORKDIR /usr/src/app
-RUN npm install mysql
+RUN npm install mysql2
 COPY . .
 EXPOSE 8080
 CMD ["node", "web-app.js"]
