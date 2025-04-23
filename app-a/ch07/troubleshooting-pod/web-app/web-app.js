@@ -1,4 +1,4 @@
-var mysql = require('mysql');
+var mysql = require('mysql2');
 var http = require('http');
 
 const hostname = '0.0.0.0';
