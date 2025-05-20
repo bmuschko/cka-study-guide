@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-without-resource-requirements
+spec:
+  containers:
+  - image: nginx:1.25.3
+    name: nginx

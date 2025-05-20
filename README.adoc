@@ -27,3 +27,5 @@ This study guide walks you through all the topics you need to fully prepare for 
 * link:./ch10[ConfigMaps and Secrets]
 * link:./ch11[Deployments and ReplicaSets]
 * link:./ch12[Scaling Workloads]
+* link:./ch13[Resource Requirements, Limits, and Quotas]
+* link:./ch14[Pod Scheduling]

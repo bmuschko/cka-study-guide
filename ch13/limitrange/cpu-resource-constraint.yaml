@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: cpu-resource-constraint
+spec:
+  limits:
+  - type: Container
+    defaultRequest:
+      cpu: 200m
+    default:
+      cpu: 200m
+    min:
+      cpu: 100m
+    max:
+      cpu: "2"
