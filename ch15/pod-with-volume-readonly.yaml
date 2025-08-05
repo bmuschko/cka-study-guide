@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: business-app
+spec:
+  volumes:
+  - name: shared-data
+    emptyDir: {}
+  containers:
+  - name: nginx
+    image: nginx:1.27.1
+    volumeMounts:
+    - name: shared-data
+      mountPath: /usr/share/nginx/html
+      readOnly: true
