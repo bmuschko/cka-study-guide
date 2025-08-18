@@ -1,0 +1,20 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: secure-gateway
+  namespace: production
+spec:
+  gatewayClassName: nginx  # or your specific GatewayClass name
+  listeners:
+  - name: http
+    port: 80
+    protocol: HTTP
+    hostname: secure.example.com
+  - name: https
+    port: 443
+    protocol: HTTPS
+    hostname: secure.example.com
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: example-tls

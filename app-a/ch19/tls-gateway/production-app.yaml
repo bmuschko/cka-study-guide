@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-web
+  namespace: production
+  labels:
+    app: prod-web
+    env: production
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prod-web
+  template:
+    metadata:
+      labels:
+        app: prod-web
+        env: production
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.22
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prod-web
+  namespace: production
+spec:
+  selector:
+    app: prod-web
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  type: ClusterIP

@@ -1,0 +1,24 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: prod-route
+  namespace: production
+spec:
+  parentRefs:
+  - name: secure-gateway
+  hostnames:
+  - secure.example.com
+  rules:
+  - matches:
+    - path:
+        type: Exact
+        value: /app
+    backendRefs:
+    - name: prod-web
+      port: 80
+    filters:
+    - type: RequestHeaderModifier
+      requestHeaderModifier:
+        set:
+        - name: X-Environment
+          value: production
