@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-main
+  namespace: production-apps
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: app.production.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-blue-svc
+            port:
+              number: 80

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-blue
+  namespace: production-apps
+  labels:
+    version: blue
+    app: main-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-blue
+      version: v1.0
+  template:
+    metadata:
+      labels:
+        app: app-blue
+        version: v1.0
+        environment: production
+    spec:
+      containers:
+      - name: app
+        image: nginxdemos/hello:0.3-plain-text
+        ports:
+        - containerPort: 80
+        env:
+        - name: VERSION
+          value: "v1.0-blue"
+        - name: DEPLOYMENT
+          value: "blue"
