@@ -1,0 +1,109 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database
+  namespace: production
+  labels:
+    tier: database
+    app: myapp
+spec:
+  containers:
+  - name: mysql
+    image: mysql:8.0
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: secret
+    ports:
+    - containerPort: 3306
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+  namespace: production
+spec:
+  selector:
+    tier: database
+    app: myapp
+  ports:
+  - port: 3306
+    targetPort: 3306
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-1
+  namespace: production
+  labels:
+    tier: backend
+    app: myapp
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-2
+  namespace: production
+  labels:
+    tier: backend
+    app: myapp
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+---
+# Backend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-1
+  namespace: production
+spec:
+  selector:
+    tier: backend
+    app: myapp
+  ports:
+  - port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-1
+  namespace: production
+  labels:
+    tier: frontend
+    app: myapp
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-2
+  namespace: production
+  labels:
+    tier: frontend
+    app: myapp
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
