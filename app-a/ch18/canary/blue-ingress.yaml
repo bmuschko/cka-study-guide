@@ -1,12 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-canary-header
+  name: app-main
   namespace: production-apps
   annotations:
-    nginx.ingress.kubernetes.io/canary: "true"
-    nginx.ingress.kubernetes.io/canary-by-header: "X-Canary"
-    nginx.ingress.kubernetes.io/canary-by-header-value: "always"
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
   rules:
@@ -17,6 +15,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: app-green-svc
+            name: app-blue-svc
             port:
               number: 80
