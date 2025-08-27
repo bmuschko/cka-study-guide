@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: alpha-app-policy
+  namespace: team-alpha
+spec:
+  podSelector:
+    matchLabels:
+      app: alpha-app
+  policyTypes:
+  - Egress
+  egress:
+  # To team-beta namespace
+  - to:
+    - namespaceSelector:
+        matchLabels:
+          team: beta
+  # Allow DNS
+  - to:
+    ports:
+    - protocol: UDP
+      port: 53
+    - protocol: TCP
+      port: 53

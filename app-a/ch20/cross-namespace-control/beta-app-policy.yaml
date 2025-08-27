@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: beta-app-policy
+  namespace: team-beta
+spec:
+  podSelector:
+    matchLabels:
+      app: beta-app
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          team: alpha
+    ports:
+    - protocol: TCP
+      port: 80

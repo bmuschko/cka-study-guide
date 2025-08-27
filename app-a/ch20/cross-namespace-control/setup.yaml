@@ -4,7 +4,6 @@ metadata:
   name: team-alpha
   labels:
     team: alpha
-    environment: dev
 ---
 apiVersion: v1
 kind: Namespace
@@ -12,43 +11,6 @@ metadata:
   name: team-beta
   labels:
     team: beta
-    environment: dev
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: shared-services
-  labels:
-    purpose: shared
-    environment: prod
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: log-aggregator
-  namespace: shared-services
-  labels:
-    app: logger
-    service: shared
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    ports:
-    - containerPort: 514
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: log-aggregator
-  namespace: shared-services
-spec:
-  selector:
-    app: logger
-    service: shared
-  ports:
-  - port: 514
-    targetPort: 514
 ---
 apiVersion: v1
 kind: Pod
@@ -60,23 +22,10 @@ metadata:
     team: alpha
 spec:
   containers:
-  - name: nginx
-    image: nginx
-    ports:
-    - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: alpha-app
-  namespace: team-alpha
-spec:
-  selector:
-    app: alpha-app
-    team: alpha
-  ports:
-  - port: 8080
-    targetPort: 8080
+  - name: app
+    image: alpine/curl:8.14.1
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do echo 'Alpha app running'; sleep 3600; done"]
 ---
 apiVersion: v1
 kind: Pod
@@ -88,10 +37,10 @@ metadata:
     team: beta
 spec:
   containers:
-  - name: nginx
-    image: nginx
+  - name: app
+    image: nginx:1.27.3-alpine
     ports:
-    - containerPort: 8080
+    - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -104,37 +53,4 @@ spec:
     team: beta
   ports:
   - port: 8080
-    targetPort: 8080
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: beta-db
-  namespace: team-beta
-  labels:
-    app: beta-db
-    team: beta
-    tier: database
-spec:
-  containers:
-  - name: postgres
-    image: postgres:13
-    env:
-    - name: POSTGRES_PASSWORD
-      value: secret
-    ports:
-    - containerPort: 5432
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: beta-db
-  namespace: team-beta
-spec:
-  selector:
-    app: beta-db
-    team: beta
-    tier: database
-  ports:
-  - port: 5432
-    targetPort: 5432
+    targetPort: 80
