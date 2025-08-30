@@ -15,7 +15,7 @@ spec:
         type: PathPrefix
         value: /staging
     backendRefs:
-    - name: staging-web
+    - name: app-service
       port: 80
     filters:
     - type: RequestHeaderModifier

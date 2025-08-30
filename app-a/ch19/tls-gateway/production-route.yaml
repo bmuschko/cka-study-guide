@@ -11,10 +11,10 @@ spec:
   rules:
   - matches:
     - path:
-        type: Exact
-        value: /app
+        type: PathPrefix
+        value: /
     backendRefs:
-    - name: prod-web
+    - name: app-service
       port: 80
     filters:
     - type: RequestHeaderModifier
