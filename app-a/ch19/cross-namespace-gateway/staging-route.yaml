@@ -15,7 +15,7 @@ spec:
         type: PathPrefix
         value: /staging
     backendRefs:
-    - name: app-service
+    - name: staging-web
       port: 80
     filters:
     - type: URLRewrite

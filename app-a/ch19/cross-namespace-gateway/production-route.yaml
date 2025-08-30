@@ -11,12 +11,17 @@ spec:
   rules:
   - matches:
     - path:
-        type: PathPrefix
-        value: /
+        type: Exact
+        value: /app
     backendRefs:
-    - name: app-service
+    - name: prod-web
       port: 80
     filters:
+    - type: URLRewrite
+      urlRewrite:
+        path:
+          type: ReplaceFullPath
+          replaceFullPath: /
     - type: RequestHeaderModifier
       requestHeaderModifier:
         set:
