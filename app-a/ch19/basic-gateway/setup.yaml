@@ -1,0 +1,129 @@
+# Web Application ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-content
+  namespace: default
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Web Application</title>
+    </head>
+    <body>
+      <h1>Web Application</h1>
+      <p>This is the web application served at /web</p>
+    </body>
+    </html>
+---
+# API Application ConfigMap
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-content
+  namespace: default
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>API Application</title>
+    </head>
+    <body>
+      <h1>API Application</h1>
+      <p>This is the API application served at /api</p>
+    </body>
+    </html>
+---
+# Web Application Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  namespace: default
+  labels:
+    app: web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.21
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: web-content
+          mountPath: /usr/share/nginx/html/web
+      volumes:
+      - name: web-content
+        configMap:
+          name: web-content
+---
+# Web Application Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app
+  namespace: default
+spec:
+  selector:
+    app: web-app
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  type: ClusterIP
+---
+# API Application Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-app
+  namespace: default
+  labels:
+    app: api-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-app
+  template:
+    metadata:
+      labels:
+        app: api-app
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:2.4
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: api-content
+          mountPath: /usr/local/apache2/htdocs/api
+      volumes:
+      - name: api-content
+        configMap:
+          name: api-content
+---
+# API Application Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-app
+  namespace: default
+spec:
+  selector:
+    app: api-app
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  type: ClusterIP
