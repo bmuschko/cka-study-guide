@@ -18,6 +18,11 @@ spec:
     - name: app-service
       port: 80
     filters:
+    - type: URLRewrite
+      urlRewrite:
+        path:
+          type: ReplacePrefixMatch
+          replacePrefixMatch: /
     - type: RequestHeaderModifier
       requestHeaderModifier:
         set:

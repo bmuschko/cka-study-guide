@@ -11,3 +11,4 @@ spec:
   to:
   - group: gateway.networking.k8s.io
     kind: Gateway
+    name: gateway

@@ -10,3 +10,6 @@ spec:
     port: 80
     protocol: HTTP
     hostname: example.com
+    allowedRoutes:
+      namespaces:
+        from: All
