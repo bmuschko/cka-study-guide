@@ -10,54 +10,6 @@ kind: Namespace
 metadata:
   name: production
 ---
-# ConfigMaps for nginx logging
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: nginx-config
-  namespace: staging
-data:
-  default.conf: |
-    log_format custom '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "X-Environment: $http_x_environment"';
-    
-    server {
-        listen 80;
-        server_name localhost;
-        
-        access_log /var/log/nginx/access.log custom;
-        
-        location / {
-            root   /usr/share/nginx/html;
-            index  index.html index.htm;
-        }
-    }
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: nginx-config
-  namespace: production
-data:
-  default.conf: |
-    log_format custom '$remote_addr - $remote_user [$time_local] "$request" '
-                      '$status $body_bytes_sent "$http_referer" '
-                      '"$http_user_agent" "X-Environment: $http_x_environment"';
-    
-    server {
-        listen 80;
-        server_name localhost;
-        
-        access_log /var/log/nginx/access.log custom;
-        
-        location / {
-            root   /usr/share/nginx/html;
-            index  index.html index.htm;
-        }
-    }
----
 # Staging Application
 ---
 apiVersion: apps/v1
@@ -80,13 +32,6 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/conf.d/
-      volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
 ---
 apiVersion: v1
 kind: Service
@@ -122,13 +67,6 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/conf.d/
-      volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
 ---
 apiVersion: v1
 kind: Service
