@@ -5,9 +5,9 @@ metadata:
   namespace: production
 spec:
   parentRefs:
-  - name: secure-gateway
+  - name: gateway
   hostnames:
-  - secure.example.com
+  - example.com
   rules:
   - matches:
     - path:

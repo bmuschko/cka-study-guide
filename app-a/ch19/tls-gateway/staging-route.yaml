@@ -5,10 +5,10 @@ metadata:
   namespace: staging
 spec:
   parentRefs:
-  - name: secure-gateway
+  - name: gateway
     namespace: production
   hostnames:
-  - secure.example.com
+  - example.com
   rules:
   - matches:
     - path:
