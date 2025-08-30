@@ -4,7 +4,7 @@ metadata:
   name: secure-gateway
   namespace: production
 spec:
-  gatewayClassName: nginx  # or your specific GatewayClass name
+  gatewayClassName: nginx
   listeners:
   - name: http
     port: 80
