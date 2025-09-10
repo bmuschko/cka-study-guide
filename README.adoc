@@ -8,8 +8,8 @@ Source code for book https://learning.oreilly.com/library/view/certified-kuberne
 
 This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.33. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
 
-> [!NOTE]
-> The source code for the 1st edition of the book is available https://github.com/bmuschko/cka-study-guide/tree/1st-edition[here].
+[NOTE]
+The source code for the 1st edition of the book is available https://github.com/bmuschko/cka-study-guide/tree/1st-edition[here].
 
 == Source Code by Chapters
 
