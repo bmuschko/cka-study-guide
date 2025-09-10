@@ -6,7 +6,7 @@
 ++++
 Source code for book https://learning.oreilly.com/library/view/certified-kubernetes-administrator/9798341608399/["Certified Kubernetes Administrator (CKA) Study Guide, 2nd Edition"], In-Depth Guidance and Practice, published by Benjamin Muschko for O'Reilly Media Inc.
 
-This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.32. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
+This study guide walks you through all the topics you need to fully prepare for the exam covering Kubernetes 1.33. Author Benjamin Muschko also shares his personal experience with preparing for all aspects of the exam.
 
 > **_NOTE:_** The source code for the 1st edition of the book is available https://github.com/bmuschko/cka-study-guide/tree/1st-edition[here].
 
@@ -29,3 +29,17 @@ This study guide walks you through all the topics you need to fully prepare for 
 * link:./ch12[Scaling Workloads]
 * link:./ch13[Resource Requirements, Limits, and Quotas]
 * link:./ch14[Pod Scheduling]
+. Storage
+* link:./ch15[Volumes]
+* link:./ch16[Persistent Volumes]
+. Servicing and Networking
+* link:./ch17[Services]
+* link:./ch18[Ingresses]
+* link:./ch19[Gateway API]
+* link:./ch20[Network Policies]
+. Troubleshooting
+* link:./ch21[Troubleshooting Applications]
+* link:./ch22[Troubleshooting Clusters]
+. Appendixes
+* link:./app-a[Appendix A: Answers to Review Questions]
+* link:./app-b[Appendix B: Exam Review Guide]
