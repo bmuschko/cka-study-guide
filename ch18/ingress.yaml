@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: next-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+  - host: next.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: app-service
+            port:
+              number: 8080
+        path: /app
+        pathType: Exact
+  - host: next.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: metrics-service
+            port:
+              number: 9090
+        path: /metrics
+        pathType: Exact

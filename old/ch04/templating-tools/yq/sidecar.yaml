@@ -1,6 +1,0 @@
-spec:
-  containers:
-  - image: envoyproxy/envoy:v1.19.1
-    name: proxy-container
-    ports:
-    - containerPort: 80

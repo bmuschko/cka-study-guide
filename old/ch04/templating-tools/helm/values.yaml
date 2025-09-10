@@ -1,4 +1,0 @@
-db_host: mysql-service
-db_user: root
-db_password: password
-service_port: 3000

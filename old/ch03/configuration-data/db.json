@@ -1,6 +1,0 @@
-{
-    "db": {
-      "host": "mysql-service",
-      "user": "backend"
-    }
-}

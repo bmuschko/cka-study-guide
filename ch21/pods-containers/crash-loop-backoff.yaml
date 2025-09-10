@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: incorrect-cmd-pod
+spec:
+  containers:
+  - name: test-container
+    image: busybox:1.36.1
+    command: ["/bin/sh", "-c", "unknown"]
