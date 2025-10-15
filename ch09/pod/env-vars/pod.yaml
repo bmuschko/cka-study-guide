@@ -5,9 +5,9 @@ metadata:
 spec:
   containers:
   - name: spring-boot-app
-    image: bmuschko/spring-boot-app:1.5.3
+    image: springio/gs-spring-boot-docker
     env:
     - name: SPRING_PROFILES_ACTIVE
-      value: prod
+      value: dev
     - name: VERSION
       value: '1.5.3'
